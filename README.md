@@ -29,9 +29,3 @@ Check out the live application here:
 **[INSERT YOUR GITHUB PAGES LINK HERE]**
 
 ---
-
-## 📂 How to Use Locally
-
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/YOUR_USERNAME/smart-pro-calculator.git](https://github.com/YOUR_USERNAME/smart-pro-calculator.git)
