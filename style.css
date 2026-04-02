@@ -1,0 +1,228 @@
+/* UPDATED FULL CSS */
+:root {
+    --bg: #0f172a;
+    --calc-card: #1c2533;
+    --display-bg: #0f1722;
+    --accent: #38bdf8;
+    --btn-num: #2d3848;
+    --btn-op: #243040;
+    --btn-red: #3d2b30;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+.app-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* --- History Panel (Optimized for Mobile & Web) --- */
+.history-overlay {
+    position: absolute;
+    left: -320px; 
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: rgba(15, 23, 35, 0.98);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    z-index: 100;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 15px;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.history-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(330px); /* Slides next to the calc */
+}
+
+.history-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 1px solid #333; 
+    padding-bottom: 10px; 
+}
+
+.clear-all-btn { 
+    background: #333; 
+    border: none; 
+    color: #888; 
+    cursor: pointer; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+}
+
+/* --- Calculator Body --- */
+.calc-body {
+    width: 100%;
+    max-width: 360px;
+    background: var(--calc-card);
+    padding: 25px;
+    border-radius: 35px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+}
+
+.display-box {
+    background: var(--display-bg);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.status-bar { 
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 11px; 
+    color: var(--accent); 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+}
+
+#historyBtn { cursor: pointer; opacity: 0.8; }
+#historyBtn:hover { opacity: 1; }
+
+/* --- Screen Scroll Fix --- */
+.screen-container { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-end; 
+    overflow: hidden; 
+}
+
+.scroll-text {
+    width: 100%;
+    text-align: right;
+    white-space: nowrap;
+    overflow-x: auto; 
+    scrollbar-width: none; 
+}
+
+.scroll-text::-webkit-scrollbar { display: none; }
+
+#mainExp { font-family: 'Orbitron', sans-serif; font-size: 2.5rem; }
+#prevExp { color: #64748b; font-size: 1rem; min-height: 1.2rem; }
+
+/* --- Keypad Grid Logic (Prevents Breaking) --- */
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 12px; 
+}
+
+.sci-row { 
+    grid-column: span 4; 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 12px; 
+    margin-bottom: 12px; 
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hidden { display: none !important; }
+
+.key {
+    background: var(--btn-num);
+    border: none;
+    color: white;
+    padding: 18px 0;
+    border-radius: 18px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 100%;
+}
+
+.key:active { transform: scale(0.92); background: #3d4b5c; }
+.op { background: var(--btn-op); color: var(--accent); }
+.ac, .del { background: var(--btn-red); color: #ff5f5f; }
+.equal { background: var(--accent); color: #0f1722; grid-row: span 2; height: 100%; }
+.sci { background: #1a222e; color: var(--accent); font-size: 0.95rem; }
+
+.mode-toggle {
+    grid-column: span 4;     
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 10px 20px;       
+    border-radius: 12px;     
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    
+    width: fit-content;        /* Makes the button width match the text size */
+    justify-self: start;       /* Aligns it to the left like in your 2nd image */
+    display: inline-block;     /* Ensures it respects the fit-content width */
+    font-size: 0.8rem;         /* Slightly smaller text for a professional look */
+}
+/* --- Responsive Media Queries --- */
+
+/* Tablet & Mobile Landscape */
+@media (max-width: 768px) {
+    .history-overlay.show {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        height: 90%;
+        top: 5%;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .calc-body {
+        width: 95vw;
+        padding: 15px;
+        border-radius: 25px;
+    }
+
+    .key {
+        padding: 15px 0;
+        font-size: 1.1rem;
+        border-radius: 14px;
+    }
+
+    #mainExp { font-size: 2rem; }
+
+    .history-overlay {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .history-overlay.show {
+        transform: none;
+    }
+}

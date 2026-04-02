@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShiftCalc Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <div class="history-overlay" id="historyPanel">
+            <div class="history-header">
+                <h3>Calculation Log</h3>
+                <button onclick="clearHistory()" class="clear-all-btn">Clear All</button>
+                <button onclick="toggleHistory()" class="close-btn">×</button>
+            </div>
+            <div id="historyItems" class="history-list"></div>
+        </div>
+
+        <div class="calc-body">
+            <div class="display-box">
+                <div class="status-bar">
+                    <span id="modeStatus">BASIC</span>
+                    <span id="historyBtn" onclick="toggleHistory()">🕒 History</span>
+                </div>
+                <div class="screen-container">
+                    <div id="prevExp" class="scroll-text"></div>
+                    <div id="mainExp" class="scroll-text">0</div>
+                </div>
+            </div>
+
+            <div class="keypad">
+                <button class="mode-toggle" onclick="switchMode()" id="modeBtn">GO SCIENTIFIC</button>
+                
+                <div class="grid">
+                    <div id="sciKeys" class="sci-row hidden">
+                        <button class="key sci" onclick="insert('Math.sin(')">sin</button>
+                        <button class="key sci" onclick="insert('Math.cos(')">cos</button>
+                        <button class="key sci" onclick="insert('Math.tan(')">tan</button>
+                        <button class="key sci" onclick="insert('Math.PI')">π</button>
+                        <button class="key sci" onclick="insert('Math.sqrt(')">√</button>
+                        <button class="key sci" onclick="insert('**')">^</button>
+                        <button class="key sci" onclick="insert('Math.log(')">ln</button>
+                        <button class="key sci" onclick="insert('Math.log10(')">log</button>
+                    </div>
+
+                    <button class="key ac" onclick="allClear()">AC</button>
+                    <button class="key del" onclick="deleteLast()">DEL</button>
+                    <button class="key op" onclick="insert('/')">÷</button>
+                    <button class="key op" onclick="insert('*')">×</button>
+
+                    <button class="key num" onclick="insert('7')">7</button>
+                    <button class="key num" onclick="insert('8')">8</button>
+                    <button class="key num" onclick="insert('9')">9</button>
+                    <button class="key op" onclick="insert('-')">−</button>
+
+                    <button class="key num" onclick="insert('4')">4</button>
+                    <button class="key num" onclick="insert('5')">5</button>
+                    <button class="key num" onclick="insert('6')">6</button>
+                    <button class="key op" onclick="insert('+')">+</button>
+
+                    <button class="key num" onclick="insert('1')">1</button>
+                    <button class="key num" onclick="insert('2')">2</button>
+                    <button class="key num" onclick="insert('3')">3</button>
+                    <button class="key equal" onclick="solve()">=</button>
+
+                    <button class="key num zero" onclick="insert('0')">0</button>
+                    <button class="key num" onclick="insert('.')">.</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
