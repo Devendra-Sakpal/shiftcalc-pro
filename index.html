@@ -22,7 +22,8 @@
             <div class="display-box">
                 <div class="status-bar">
                     <span id="modeStatus">BASIC</span>
-                    <span id="historyBtn" onclick="toggleHistory()">🕒 History</span>
+                    <span onclick="toggleTheme()" class="interactive-label">🌓 Theme</span>
+                    <span id="historyBtn" onclick="toggleHistory()" class="interactive-label">🕒 History</span>
                 </div>
                 <div class="screen-container">
                     <div id="prevExp" class="scroll-text"></div>
@@ -41,8 +42,10 @@
                         <button class="key sci" onclick="insert('Math.PI')">π</button>
                         <button class="key sci" onclick="insert('Math.sqrt(')">√</button>
                         <button class="key sci" onclick="insert('**')">^</button>
-                        <button class="key sci" onclick="insert('Math.log(')">ln</button>
-                        <button class="key sci" onclick="insert('Math.log10(')">log</button>
+                        <button class="key sci" onclick="insert('(')">(</button>
+                        <button class="key sci" onclick="insert(')')">)</button>
+                        <button class="key sci" onclick="insert('2.9979e8')" title="Speed of Light">c</button>
+                        <button class="key sci" onclick="convertTemp()" title="Celsius to Fahrenheit">°C→°F</button>
                     </div>
 
                     <button class="key ac" onclick="allClear()">AC</button>
