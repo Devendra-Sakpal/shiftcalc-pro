@@ -1,6 +1,6 @@
 # 🚀 ShiftCalc Pro – Smart Scientific Calculator
 
-ShiftCalc Pro is a modern, feature-rich web-based calculator that supports both **basic and scientific calculations** with a clean UI, history tracking, and smart features like voice input and theme switching.
+ShiftCalc Pro is a modern, feature-rich web-based calculator that supports both **basic and scientific calculations** with a clean UI, history tracking, and smart features like theme switching.
 
 ---
 
@@ -66,29 +66,24 @@ ShiftCalc Pro is a modern, feature-rich web-based calculator that supports both 
 ## 💡 Key Highlights
 
 - Built with **modern UI design (Glassmorphism + responsive layout)**
-- Implements **real-world features like history & voice commands**
+- Implements **real-world features like history**
 - Focuses on **performance, usability, and clean UX**
 - Demonstrates strong **JavaScript logic and DOM manipulation skills**
 
 ---
 
 ## 📌 Future Improvements
-
-- Add user login system  
+ 
 - Save history to cloud (Firebase)  
 - Add more scientific functions  
-- Improve voice recognition accuracy  
+- Add voice recognition  
 
 ---
 
 ## 👨‍💻 Author
 
 **Devendra Sakpal**  
-GitHub: https://github.com/Devendra-Sakpal  
-Portfolio: https://devendra-sakpal.github.io/
 
 ---
-
-## ⭐ Support
 
 If you like this project, give it a ⭐ on GitHub!
